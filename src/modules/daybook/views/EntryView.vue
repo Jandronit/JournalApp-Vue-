@@ -24,7 +24,7 @@
   <div class="d-flex flex-column px-3 h-75">
     <textarea placeholder="¿Qué sucedió ahora"></textarea>
   </div>
-  <Fab></Fab>
+  <Fab icon="fa-save"></Fab>
 
   <img src="https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="entry-picture" class="img-thumbnail">
 </template>
