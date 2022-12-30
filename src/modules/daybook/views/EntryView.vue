@@ -32,10 +32,30 @@
 <script>
 import {defineAsyncComponent} from 'vue';
 
+import { mapGetters } from 'vuex';
+
 export default {
   name: "EntryView",
+  props: {
+    id: {
+      type: String,
+      required: true
+    }
+  },
   components: {
     Fab: defineAsyncComponent(() => import('../components/Fab.vue')),
+  },
+  computed: {
+    ...mapGetters('journal', ['getEntryById'])
+  },
+  methods: {
+    loadEntry() {
+      const entry = this.getEntryById(this.id);
+      console.log(entry);
+    }
+  },
+  created() {
+    this.loadEntry();
   }
 }
 </script>
@@ -57,5 +77,5 @@ img{
   position: fixed;
   bottom: 9.375rem;
   right: 1.25rem;
-  box-shadow: 0px 5px 10px rgba($color: #000000, $alpha: 0.2);}
+  box-shadow: 0 5px 10px rgba($color: #000000, $alpha: 0.2);}
 </style>
