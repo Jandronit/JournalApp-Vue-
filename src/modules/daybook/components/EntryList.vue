@@ -7,7 +7,9 @@
            placeholder="Buscar entrada"/>
 
     <div class="entry-scrollbar">
-      <Entry v-for="item in entriesByTerm" :key="item">
+      <Entry v-for="entry in entriesByTerm"
+             :key="entry.id"
+             :entry="entry" >
 
       </Entry>
     </div>
